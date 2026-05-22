@@ -20,7 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install typer
+          pip install pydantic
           pip install pytest
 
       - name: Run tests
@@ -29,7 +30,7 @@ jobs:
 
       - name: Create build archive
         run: |
-          zip -r build.zip todo_app tests requirements.txt
+          zip -r build.zip todo_app tests
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
